@@ -1,2 +1,2 @@
-for num in range(100):
-    print(str(num).zfill(2), end=", " if num < 99 else "\n")
+for i in range(0, 100):
+  print("{:02}, ".format(i), end = "" )
