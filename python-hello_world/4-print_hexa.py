@@ -1,2 +1,2 @@
 for i in range(0, 99):
-     print(hex(i))
+     print(format(hex(i)))
