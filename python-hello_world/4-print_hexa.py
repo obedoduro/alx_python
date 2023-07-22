@@ -1,3 +1,2 @@
 for i in range(0, 99):
-     print(f"{hex(i)}")
-     
+    print(" 0x%x" % (i))
