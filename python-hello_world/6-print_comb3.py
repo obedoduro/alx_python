@@ -3,4 +3,4 @@ for i in range(10):
         if i < 8:
          print("{}{}, ".format(i, j), end = '')
         else :
-           print("{}{} ".format(i, j), end = '\n')
+           print("{}{}\n ".format(i, j))
