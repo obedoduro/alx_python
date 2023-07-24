@@ -1,5 +1,6 @@
 for i in range(10):
-    for j in range(i + 1, 9):
-        print("{}{}, ".format(i, j), end = '')
-    if i == 9:
-        print("{}{} ".format(j, i), end = '')
+    for j in range(i + 1, 10):
+        if i < 8:
+         print("{}{}, ".format(i, j), end = '')
+        else :
+           print("{}{} ".format(i, j), end = '')
