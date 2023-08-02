@@ -3,5 +3,5 @@ class Square:
         self.__size = size
 
 #intiazing the method square
-my_square = Square(5)
+my_square = Square()
 print(my_square._Square__size)  
