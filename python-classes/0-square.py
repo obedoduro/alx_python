@@ -5,7 +5,7 @@ class Square:
 # Example usage
 square = Square(3)
 print(type(square))
-print(square.__dict__)
+
 try:
    pass
 except AttributeError as e:
