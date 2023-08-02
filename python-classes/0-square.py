@@ -11,6 +11,6 @@ try:
 except AttributeError as e:
     pass
 try:
-    print(square.__size)
+    pass
 except AttributeError as e:
     pass
