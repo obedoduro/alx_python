@@ -4,7 +4,7 @@ class Square:
 
 # Example usage
 square = Square(3)
-print(type(square))
+
 
 try:
    pass
