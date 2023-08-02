@@ -31,5 +31,4 @@ class Square:
 
 
 
-mysquare = Square(3) 
-mysquare.my_print()
+mysquare = Square(3).read() 
