@@ -29,7 +29,5 @@ class Square:
             print()
             return
 
-
-valid_square = Square(3)
-
-valid_square.my_print()
+mysquare = Square(3) 
+mysquare.my_print()
