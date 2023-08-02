@@ -32,5 +32,5 @@ class Square:
 empty_square = Square()
 empty_square.my_print()
 
-valid_square = Square(3)
+valid_square = Square()
 valid_square.my_print()
