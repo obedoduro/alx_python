@@ -29,5 +29,5 @@ class Square:
             print()
 
 
-valid_square = Square()
+valid_square = Square(0)
 valid_square.my_print()
