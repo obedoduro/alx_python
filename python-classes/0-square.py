@@ -4,6 +4,6 @@ class Square:
 
 #intiazing the method square
 my_square = Square(3)
-print(my_square._Square__size)  
-print(type(square))
-print(square.__dict__)
+
+print(type(my_square))
+print(my_square.__dict__)
