@@ -5,5 +5,4 @@ class Square:
 #intiazing the method square
 my_square = Square(3)
 
-print(type(my_square), my_square.__dict__)
 
