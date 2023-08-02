@@ -7,10 +7,10 @@ square = Square(3)
 print(type(square))
 print(square.__dict__)
 try:
-    print(square.size)
+   pass
 except AttributeError as e:
-    print(e)
+    pass
 try:
     print(square.__size)
 except AttributeError as e:
-    print(e)
+    pass
