@@ -30,4 +30,4 @@ class Square:
             return
 
 mysquare = Square(3) 
-
+mysquare.my_print
