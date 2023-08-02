@@ -31,3 +31,5 @@ class Square:
 
 
 valid_square = Square(3)
+
+valid_square.my_print()
