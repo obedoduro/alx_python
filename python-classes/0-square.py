@@ -4,4 +4,4 @@ class Square:
 
 #intiazing the method square
 my_square = Square(5)
-print(my_square._Square__size)  
+my_square._Square__size 
