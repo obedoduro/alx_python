@@ -20,6 +20,6 @@ class Square:
         return self.__size * self.__size
 
 
-my_square_1 = Square(3)
+my_square_1 = Square(0)
 print(my_square_1.size)
 print(my_square_1.area())
