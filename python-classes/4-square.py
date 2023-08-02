@@ -29,5 +29,7 @@ class Square:
             print()
             return
 
+
+
 mysquare = Square(3) 
-mysquare.my_print
+mysquare.my_print()
