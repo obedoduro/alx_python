@@ -27,7 +27,8 @@ class Square:
 
         if self.__size == 0:
             print()
+            return
 
 
-valid_square = Square(0)
+valid_square = Square(3)
 valid_square.my_print()
