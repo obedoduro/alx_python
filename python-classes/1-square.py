@@ -6,8 +6,7 @@ class Square:
             raise ValueError("size must be >= 0")
         
         self.__size = size
-try:
-    my_square_1 = Square(3)
-    #print(type(my_square_1))
-except:
-    print(e)
+        print("uioo")
+        return (self.__size)
+
+#print(type(my_square_1))
