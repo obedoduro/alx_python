@@ -1,12 +1,9 @@
 class Square:
     """class to handle square of values 
     pass and return the shit
-    
-    
     Attributes:
     size    The value passed to be squared.
     """
-    __doc__ = message="documentation"
     def __init__(self, size=0):
         """ initialisation of function to handle prerequire values"""
         if not isinstance(size, int):
@@ -19,5 +16,5 @@ class Square:
      
 
 my_square_ref = Square
-my_square_ref(3)
+print(my_square_ref(3))
 # type(my_square_ref)
