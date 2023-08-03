@@ -7,7 +7,7 @@ class Square:
             raise ValueError("size must be >= 0")
         
         self.__size = size
-        print(end="")
+        print("")
         return None
 
 #my_square_1 = Square(3)
