@@ -9,5 +9,5 @@ class Square:
         self.__size = size
      
 
-my_square_1 = Square(3)
-print(type(my_square_1))
+Square(3)
+# type(my_square_1)
