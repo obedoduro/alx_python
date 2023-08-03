@@ -2,6 +2,7 @@ class Square:
     """class to handle square of values 
     pass and return the shit
     
+    
     Attributes:
     size    The value passed to be squared.
     """
