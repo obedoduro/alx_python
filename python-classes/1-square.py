@@ -9,5 +9,6 @@ class Square:
         self.__size = size
      
 
-Square(3)
-# type(my_square_1)
+my_square_ref = Square
+my_square_ref(3)
+# type(my_square_ref)
