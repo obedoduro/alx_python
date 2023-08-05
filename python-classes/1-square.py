@@ -10,11 +10,11 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        print("/n")
+        print("\n")
         self.__size = size
         
      
 
-# my_square_ref = Square
-# print(my_square_ref(3))
+my_square_ref = Square
+#print(my_square_ref(3))
 # type(my_square_ref)
