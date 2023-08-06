@@ -20,6 +20,7 @@ my_square_ref = Square
 # type(my_square_ref)
 def main():
     my_square_ref = Square
-    Square.__init__
+    #print(my_square_ref.__init__)
 
 main()
+Square()
