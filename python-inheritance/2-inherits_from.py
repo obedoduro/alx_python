@@ -23,7 +23,9 @@ obj3 = C()
 obj4 = D()
 
 
-print(inherits_from(obj1, A))
+
+
+print(" {}", None)
 # print(inherits_from(obj2, B))
 # print(inherits_from(obj3, A)) 
 # print(inherits_from(obj3, B)) 
