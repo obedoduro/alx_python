@@ -1,3 +1,4 @@
+#parent class
 class BaseGeometry:
     def area(self):
         raise Exception ("area() is not implemented")
@@ -13,7 +14,7 @@ bg = BaseGeometry()
 #print(dir(bg))
 
 # print(bg.integer_validator("my_int", 12))
-
+#inherent class
 class Rectangle(BaseGeometry):
         
     def __init__(self, width, height):
