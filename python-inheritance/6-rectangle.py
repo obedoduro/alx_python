@@ -12,7 +12,7 @@ class BaseGeometry:
 bg = BaseGeometry() 
 #print(dir(bg))
 
-print(bg.integer_validator("my_int", 12))
+# print(bg.integer_validator("my_int", 12))
 
 class Rectangle(BaseGeometry):
         
@@ -23,6 +23,4 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
 
 rectangle = Rectangle(90, 25)
-print("rectangle width:", rectangle._Rectangle__width)
-print("rectangle height:", rectangle._Rectangle__height)
-    
+print(sorted(dir(rectangle)))  
