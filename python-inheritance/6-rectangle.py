@@ -23,4 +23,4 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
 
 rectangle = Rectangle(90, 25)
-print(sorted(dir(rectangle)))  
+print(dir(rectangle))  
