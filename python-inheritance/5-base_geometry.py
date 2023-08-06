@@ -12,4 +12,4 @@ class BaseGeometry:
 bg = BaseGeometry() 
 #print(dir(bg))
 
-bg.integer_validator("my_int", 12)
+print(bg.integer_validator("my_int", 12))
