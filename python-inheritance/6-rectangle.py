@@ -14,12 +14,15 @@ bg = BaseGeometry()
 
 print(bg.integer_validator("my_int", 12))
 
-class Rectangle:
-    gert = BaseGeometry()
-    
+class Rectangle(BaseGeometry):
+        
     def __init__(self, width, height):
-        self.width = width
-        self.height =  height 
+        self.__width = width
+        self.__height =  height 
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
 
-    gert.integer_validator('width',10)
-    gert.integer_validator('height',10)
+rectangle = Rectangle(90, 25)
+print("rectangle width:", rectangle._Rectangle__width)
+print("rectangle height:", rectangle._Rectangle__height)
+    
