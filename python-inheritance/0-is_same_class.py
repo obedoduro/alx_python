@@ -12,8 +12,8 @@ class B(A):
 obj1 = A()
 obj2 = B()
 
-print(is_same_class(obj1, A)) 
-print(is_same_class(obj1, B))   
-print(is_same_class(obj2, B))  
-print(is_same_class(obj2, A))  
+is_same_class(obj1, A) 
+is_same_class(obj1, B)   
+is_same_class(obj2, B)  
+is_same_class(obj2, A)  
 
