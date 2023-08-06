@@ -24,7 +24,16 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
 
-# Output
-rectangle = Rectangle(10, 5)
-print(rectangle)
-print("Area:", rectangle.area())
+class Square(Rectangle):
+    def __init__(self, size):
+        self.__size = size
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+
+    def __str__(self):
+        return f"[Square] {self.__size}/{self.__size}"
+
+# output
+square = Square(5)
+print(square)
+print("Area:", square.area())
