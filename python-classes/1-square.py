@@ -12,13 +12,9 @@ class Square:
             raise ValueError("size must be >= 0")
         
         self.__size = size
-    # print("\n")
+    print(end ="")
      
 
 my_square_ref = Square
 #print(my_square_ref(3))
 # type(my_square_ref)
-def main():
-    naimal = animal("born alive")
-
-main()
