@@ -1,6 +1,6 @@
 #checking instance of object in each class
 def is_same_class(obj, a_class):
-   print("")
+   print(".")
    return type(obj) is a_class
 
 # Classes 
