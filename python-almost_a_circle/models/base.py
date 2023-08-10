@@ -1,4 +1,4 @@
-#first class created
+# models/base.py
 class Base:
     """
     This class is the base for all other classes in the project.
