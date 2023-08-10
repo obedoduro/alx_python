@@ -1,14 +1,15 @@
 # models/base.py
+
 class Base:
     """
     This class is the base for all other classes in the project.
-    It manages the 'id' attribute for instances in this project.
+    It manages the 'id' attribute for instances.
     """
-    
-    __nb_objects = 0 
 
-    def __init__(self, id = None ):
-         """
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """
         Initialize a new instance of the Base class.
 
         Args:
@@ -18,12 +19,8 @@ class Base:
         Returns:
             None
         """
-         if(int, id!=None):
-            self._id = id
-         else:
+        if id is not None:
+            self.id = id
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
-
-Base.__init__
-#print(Base.__init__)
