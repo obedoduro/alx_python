@@ -48,8 +48,17 @@ class Base:
         Returns:
             None
         """
+
+        
+        """
+        if  id != None
+        """
         if id is not None:
             self.id = id
+
+        # """
+        # else  id = None
+        # """
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
