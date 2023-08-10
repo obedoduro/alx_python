@@ -13,8 +13,6 @@ class B(A):
 obj1 = A()
 obj2 = B()
 
-# is_same_class(obj1, A)
+is_same_class(obj1, A)
 a = 1
-print (  is_same_class(a, int))
-
-
+#print (  is_same_class(a, int))
