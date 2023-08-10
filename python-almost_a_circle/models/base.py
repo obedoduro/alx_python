@@ -9,5 +9,5 @@ class Base:
             id = __nb_objects
            
 
-
+Base.__init__
 print(Base.__init__)
