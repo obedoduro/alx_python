@@ -10,4 +10,4 @@ class Base:
            
 
 Base.__init__
-print(Base.__init__)
+#print(Base.__init__)
