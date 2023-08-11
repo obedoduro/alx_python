@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""This module defines the Rectangle class."""
+"""This module defines the Base class."""
 
 #from models.base import Base
 
-class Rectangle():
+class Base():
     """
     This class represents a rectangle.
 
@@ -16,7 +16,7 @@ class Rectangle():
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Initializes a Rectangle instance.
+        Initializes a Base instance.
 
         Args:
             width (int): The width of the rectangle.
@@ -102,5 +102,5 @@ class Rectangle():
         Returns:
             str: The formatted string representing the rectangle.
         """
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+        return "[Base] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
