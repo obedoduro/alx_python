@@ -3,7 +3,7 @@
 
 #from models.base import Base
 
-class Rectangle(Base):
+class Rectangle():
     """
     This class represents a rectangle.
 
