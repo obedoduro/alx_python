@@ -15,6 +15,7 @@ class Base():
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        self.id = None
         """
         Initializes a Base instance.
 
@@ -33,7 +34,3 @@ class Base():
         self.height = height
         self.x = x
         self.y = y
-
-    def set_id(self, id):
-        self.id = id
-
