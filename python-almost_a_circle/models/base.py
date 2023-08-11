@@ -34,3 +34,6 @@ class Base():
         self.x = x
         self.y = y
 
+    def set_id(self, id):
+        self.id = id
+
