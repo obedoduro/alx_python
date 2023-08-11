@@ -33,13 +33,13 @@ class Base():
 
 # Example usage
 rectangle1 = Base()  # Creating an instance without passing an id
-print(rectangle1.id)  # This will be automatically assigned (1)
+rectangle1.id  # This will be automatically assigned (1)
 
 rectangle2 = Base(10)  # Creating an instance with a specific id
-print(rectangle2.id)   # This will be 10
+rectangle2.id   # This will be 10
 
 rectangle3 = Base()  # Creating another instance without passing an id
-print(rectangle3.id)  # This will be automatically assigned (2)
+rectangle3.id  # This will be automatically assigned (2)
 
 rectangle4 = Base()  # Creating yet another instance without passing an id
-print(rectangle4.id)  # This will be automatically assigned (3)
+rectangle4.id  # This will be automatically assigned (3)
