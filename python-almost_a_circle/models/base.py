@@ -30,6 +30,16 @@ class Base():
             ValueError: If width, height, x, or y is less than 0.
         """
         #super().__init__(id)
+
 # Example usage
 rectangle1 = Base()  # Creating an instance without passing an id
-print(rectangle1.id)
+print(rectangle1.id)  # This will be automatically assigned (1)
+
+rectangle2 = Base(10)  # Creating an instance with a specific id
+print(rectangle2.id)   # This will be 10
+
+rectangle3 = Base()  # Creating another instance without passing an id
+print(rectangle3.id)  # This will be automatically assigned (2)
+
+rectangle4 = Base()  # Creating yet another instance without passing an id
+print(rectangle4.id)  # This will be automatically assigned (3)
