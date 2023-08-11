@@ -29,5 +29,7 @@ class Base():
         Raises:
             ValueError: If width, height, x, or y is less than 0.
         """
-        super().__init__(id)
-        
+        #super().__init__(id)
+# Example usage
+rectangle1 = Base()  # Creating an instance without passing an id
+print(rectangle1.id)
