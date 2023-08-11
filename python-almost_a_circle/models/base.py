@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+class Base():
+    def gert():
+        print("now")
+
 """This module defines the Rectangle class."""
 
 #from models.base import Base
 
-class Rectangle():
+class Rectangle(Base):
     """
     This class represents a rectangle.
 
@@ -104,3 +108,4 @@ class Rectangle():
         """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+
