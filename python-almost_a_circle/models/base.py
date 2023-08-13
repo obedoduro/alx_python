@@ -15,7 +15,7 @@ class Base():
     """
 
     def __init__(self, id=None):
-        self.id = None
+        #self.id = None
 
         """
         Initializes a Base instance.
