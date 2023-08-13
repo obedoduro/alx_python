@@ -90,8 +90,8 @@ class Rectangle(Base):
 
 # Example usage
 rectangle = Rectangle(10, 20, 5, 7, 1)
-print(rectangle.width) 
-print(rectangle.height)
-print(rectangle.x)
-print(rectangle.y)
-print(rectangle.id)
+(rectangle.width) 
+(rectangle.height)
+(rectangle.x)
+(rectangle.y)
+(rectangle.id)
