@@ -33,7 +33,7 @@ class Base():
             If id is not provided, a new unique id will be automatically assigned.
         """
         if id is None:
-            Base.__count = getattr(Base, '__count', 0) + 1
+            Base.__count +=  1
             self.id = Base.__count
 
            # print(self.id)
