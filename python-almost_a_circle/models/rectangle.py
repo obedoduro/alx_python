@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from base import Base
+#from base import Base
 """This module defines the rectangle class."""
 class Rectangle():
     """
