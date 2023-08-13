@@ -33,10 +33,10 @@ class Base():
             If id is not provided, a new unique id will be automatically assigned.
         """
         if id is None:
-            Base.__count +=  1
+            Base.__count = getattr(Base, '__count', 0) + 1
             self.id = Base.__count
 
-           # print(self.id)
+            print(self.id)
         else:
             self.id = id
 
@@ -52,5 +52,5 @@ rectangle2.id   # This will be 10
 rectangle3 = Base()  # Creating another instance without passing an id
 rectangle3.id  # This will be automatically assigned (2)
 
-rectangle4 = Base()  # Creating yet another instance without passing an id
+rectangle4 = Base(rectangle3.id)  # Creating yet another instance without passing an id
 rectangle4.id  # This will be automatically assigned (3)
