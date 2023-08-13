@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-#from base import Base
+from base import Base
 """This module defines the rectangle class."""
-class Rectangle():
+class Rectangle(Base):
     """
     This class represents a rectangle.
 
@@ -24,7 +24,7 @@ class Rectangle():
             id(int): The unique identifier of the rectangle 
         """
 
-        super().base.__init__(id)
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -78,3 +78,9 @@ class Rectangle():
             raise ValueError("y must be non-negative")
         self.__y = value
     
+rectangle = Rectangle(10, 20, 5, 7, 1)
+rectangle.width 
+rectangle.height  
+rectangle.x  
+rectangle.y  
+rectangle.id  
