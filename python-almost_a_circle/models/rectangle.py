@@ -105,4 +105,4 @@ rectangle.height
 rectangle.x  
 rectangle.y  
 rectangle.id  
-rectangle.area()
+#rectangle.area()
