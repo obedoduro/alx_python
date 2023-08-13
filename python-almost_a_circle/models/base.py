@@ -28,7 +28,10 @@ class Base():
         """
         if id is None:
             Base.__count = getattr(Base, '__count', 0) + 1
-            self.id = Base.__count + 1
+            self.id = Base.__count 
+
+            Base.__count2 = getattr(Base, '__count2', 0) + 1
+            self.id = Base.__count2 +1
         else:
             self.id = id
 
