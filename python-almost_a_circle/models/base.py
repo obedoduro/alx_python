@@ -13,6 +13,7 @@ class Base():
         __x (int): The x-coordinate of the rectangle's position.
         __y (int): The y-coordinate of the rectangle's position.
     """
+    __count = 0  # Class variable to keep track of instance count
 
     def __init__(self, id=None):
         #self.id = None
@@ -28,10 +29,9 @@ class Base():
         """
         if id is None:
             Base.__count = getattr(Base, '__count', 0) + 1
-            self.id = Base.__count 
+            self.id = Base.__count
 
-            Base.__count2 = getattr(Base, '__count2', 0) + 1
-            self.id = Base.__count2 +1
+            print(self.id)
         else:
             self.id = id
 
