@@ -16,19 +16,22 @@ class Base():
 
     def __init__(self, id=None):
         self.id = None
+
         """
         Initializes a Base instance.
 
         Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-            x (int): The x-coordinate of the rectangle's position.
-            y (int): The y-coordinate of the rectangle's position.
-            id (int): The unique identifier of the rectangle.
+            id (int): The unique identifier of the instance.
 
-        Raises:
-            ValueError: If width, height, x, or y is less than 0.
+        Note:
+            If id is not provided, a new unique id will be automatically assigned.
         """
+        if id is None:
+            Base.__count = getattr(Base, '__count', 0) + 1
+            self.id = Base.__count
+        else:
+            self.id = id
+
         #super().__init__(id)
 
 # Example usage
