@@ -4,6 +4,8 @@
 #from models.base import Base
 
 class Base():
+    __count = 0  # Class variable to keep track of instance count
+
     """
     This class represents a rectangle.
 
@@ -13,7 +15,6 @@ class Base():
         __x (int): The x-coordinate of the rectangle's position.
         __y (int): The y-coordinate of the rectangle's position.
     """
-    __count = 0  # Class variable to keep track of instance count
 
     def __init__(self, id=None):
         #self.id = None
