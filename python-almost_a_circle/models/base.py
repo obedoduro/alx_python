@@ -4,7 +4,11 @@
 #from models.base import Base
 
 class Base():
-    __count = 0  # Class variable to keep track of instance count
+
+    """ Attributes:
+        __count (int): Class variable to keep track of instance count.
+    """
+    __count = 0 
 
     """
     This class represents a rectangle.
