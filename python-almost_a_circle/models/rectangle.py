@@ -118,7 +118,7 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
     
     def update(self, *args, **kwargs):
-        
+
             
         """
         Assigning arguments to attributes
@@ -142,15 +142,15 @@ class Rectangle(Base):
 
         else:
             if "id" in kwargs:
-                self.id = kwargs["a"]
+                self.id = kwargs[]
             if "width" in kwargs:
-                self.id = kwargs["b"]
+                self.id = kwargs[]
             if "height" in kwargs:
-                self.id = kwargs["c"]
+                self.id = kwargs[]
             if "x" in kwargs:
-                self.id = kwargs["d"]
+                self.id = kwargs[]
             if "y" in kwargs:
-                self.id = kwargs["e"]
+                self.id = kwargs[]
 
     
 
