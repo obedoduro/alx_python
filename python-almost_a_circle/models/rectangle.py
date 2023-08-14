@@ -13,6 +13,8 @@ class Rectangle(Base):
        __x (int): the x-coordinate of the rectangles position
        __y (int): the y-coordinate of the rectangles position
     """
+    count=0
+    countol =0
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -100,7 +102,7 @@ class Rectangle(Base):
     
     def display(self):
         """Display stdout the Rectangle instance with the character #"""
-        count, countol =0
+        
 
         while __height <= countol:
             while __width <= count:
