@@ -37,13 +37,13 @@ class Square(Rectangle):
         """getter for width"""
         return self.width
 
-    @width.setter
+    @size.setter
     def size(self, value):
         """set value of width to height """
 
         self.width = value
         self.height = value
-        
+
     def __str__(self):
         """
         returning area of Square
