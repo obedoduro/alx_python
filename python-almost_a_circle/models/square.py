@@ -30,11 +30,6 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
 
-    def __str__(self):
-        """
-        returning area of Square
-        """
-        return  f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
     
 
     @property
@@ -51,4 +46,9 @@ class Square(Rectangle):
         else:
             raise ValueError("width must be > 0")
 
-
+    def __str__(self):
+        """
+        returning area of Square
+        """
+        return  f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+    
