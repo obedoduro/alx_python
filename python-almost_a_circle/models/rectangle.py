@@ -104,8 +104,8 @@ class Rectangle(Base):
         """Display stdout the Rectangle instance with the character #"""
         
 
-        while __height <= countol:
-            while __width <= count:
+        while height <= countol:
+            while width <= count:
                 print("#")
                 count = count + 1
         
