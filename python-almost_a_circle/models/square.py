@@ -27,12 +27,7 @@ class Square(Rectangle):
             id(int): The unique identifier of the rectangle 
         """
 
-        super().__init__(id)
-        super().__init__(x)
-        super().__init__(y)
-        super().__init__(size)
-        super().__init__(size)
-
+        super().__init__(size, size, x, y, id)
 
 
     def __str__(self):
