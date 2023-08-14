@@ -100,7 +100,7 @@ class Rectangle(Base):
     
     def display(self):
         """Display stdout the Rectangle instance with the character #"""
-        print("#", Rectangle(10, 12))
+        print("#")
         
 
 
