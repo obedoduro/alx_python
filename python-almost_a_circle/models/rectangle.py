@@ -99,7 +99,7 @@ class Rectangle(Base):
         return self.__width * self__height
 
 
-rectangle = Rectangle()
+rectangle = Rectangle(10, 20, 5, 7, 1)
 rectangle.width 
 rectangle.height  
 rectangle.x  
