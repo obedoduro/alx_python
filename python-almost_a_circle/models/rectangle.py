@@ -100,8 +100,16 @@ class Rectangle(Base):
     
     def display(self):
         """Display stdout the Rectangle instance with the character #"""
-        print("#")
+        count, countol =0
+
+        while __height <= countol:
+            while __width <= count:
+                print("#")
+                count = count + 1
         
+        
+            print("\n")
+            countol = countol + 1
 
 
 rectangle = Rectangle(10, 12)
