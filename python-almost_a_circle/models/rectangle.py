@@ -102,7 +102,7 @@ class Rectangle(Base):
     
     def display(self):
         """Display stdout the Rectangle instance with the character #"""
-        if not instance(self.__y, 0) :
+        if not isinstance(self.__y, 0) :
            print("\n"* ((self.__y)-1))
 
         for _ in range (self.__height):
