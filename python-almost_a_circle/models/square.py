@@ -39,5 +39,5 @@ class Square(Rectangle):
         """
         returning area of Square
         """
-        return "[Square] ({:d}) {:d}/{:d} - {:d} ".format(self.id, self.x, self.y, self.width)
+        return  f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
