@@ -102,7 +102,8 @@ class Rectangle(Base):
     
     def display(self):
         """Display stdout the Rectangle instance with the character #"""
-        
+        self.__width =width
+        self.__height=height
 
         while height <= 5:
             while width <= 5:
