@@ -35,4 +35,20 @@ class Square(Rectangle):
         returning area of Square
         """
         return  f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+    
+
+    @property
+    def size(self):
+        """getter for width"""
+        return self.width
+
+    @width.setter
+    def size(self, value):
+        """set value of width to height """
+
+        if value >=0:            
+            self.width = self.height=  value
+        else:
+            raise ValueError("width must be > 0")
+
 
