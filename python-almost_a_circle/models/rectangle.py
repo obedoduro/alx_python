@@ -125,7 +125,7 @@ class Rectangle(Base):
             *args: Arguments in the order id, width, height, x and y 
         """
 
-        if len(args)>=1 :
+        if len(args) >= 1 :
             self.id = args[0]
         elif len(args) >= 2 :
             self.width = args[1]
@@ -139,10 +139,10 @@ class Rectangle(Base):
            
         
 
-rectangle = Rectangle(10, 12)
-rectangle.width 
-rectangle.height  
-rectangle.x  
-rectangle.y  
-rectangle.id  
-rectangle.area()
+# rectangle = Rectangle(10, 12)
+# rectangle.width 
+# rectangle.height  
+# rectangle.x  
+# rectangle.y  
+# rectangle.id  
+# rectangle.area()
