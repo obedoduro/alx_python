@@ -99,7 +99,9 @@ class Rectangle(Base):
         return self.__width * self.__height
     
     def display(self):
+        """Display stdout the Rectangle instance with the character #"""
         print("#", Rectangle(10, 12))
+        
 
 
 rectangle = Rectangle(10, 12)
