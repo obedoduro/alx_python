@@ -41,10 +41,13 @@ class Square(Rectangle):
     def size(self, value):
         """set value of width to height"""
 
+        if not isinstance(value, int):
+            raise TypeError ("width must be an integer")
+
         if value >=0:            
             self.width = self.height=  value
         else:
-            raise ValueError("width must be greater than 0")
+            raise ValueError("width must be > 0")
 
     def __str__(self):
         """
