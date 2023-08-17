@@ -11,7 +11,7 @@ def take_url_and_email(url, email):
     Sends a post request to the given URL with the email
     """
     payload = {'email': email}
-    response = request.post(url, data=payload)
+    response = requests.post(url, data=payload)
     return response.text
 
 if __name__ == "__main__":
