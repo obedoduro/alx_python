@@ -18,4 +18,13 @@ def  takes_a_url_and_display(url):
 # print("\t- content:", response.text)
 
 if  __name__ == "__main__":
-    takes_a_url_and_display()
+    if len(sys.argv) < 2:
+        print("Usage: {} <URL>".format(sys.argv[0]))
+        sys.exit(1)
+
+    url = sys.argv[1]
+    request_id = fetch_request_id(url)
+    if request_id:
+        print(request_id)
+    else:
+        print("X-Request-Id header not found in the response.")
