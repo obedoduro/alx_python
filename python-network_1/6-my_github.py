@@ -1,7 +1,7 @@
 #!/usr/bin/env/python3
 import sys
 import requests
-import os
+
 
 def get_github_id(username, token):
     """
@@ -30,10 +30,9 @@ def get_github_id(username, token):
         print("Response is not valid JSON.")
 
 if __name__ == "__main__":
-    github_username = os.environ.get("GITHUB_USERNAME")
-    github_token = os.environ.get("GITHUB_TOKEN")
-    
-    if github_username and github_token:
-        get_github_id(github_username, github_token)
+    if len(sys.argv) < 3:
+        print("Please provide your GitHub username and personal access token as arguments.")
     else:
-        print("Please set GITHUB_USERNAME and GITHUB_TOKEN environment variables.")
+        github_username = sys.argv[1]
+        github_token = sys.argv[2]
+        get_github_id(github_username, github_token)
