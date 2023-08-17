@@ -34,4 +34,9 @@ def errorcode(url):
 
 
 if __name__ == "__main__":
-    errorcode(url)
+    if len(sys.argv) < 2:
+        print("Please provide as an argument.")
+    
+    else:
+        url = sys.argv[1]
+        errorcode(url)
