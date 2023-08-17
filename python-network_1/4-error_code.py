@@ -24,6 +24,9 @@ def errorcode(url):
 
         if reponse.status_code >= 400:
             print(f"Error code: {response.status_code}")
+        
+        if response.status_code < 400:
+            print("Regular request")
 
 
     except requests.exceptions.RequestException as e:
