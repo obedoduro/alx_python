@@ -1,5 +1,5 @@
-import requests
-import sys
+#!/usr/bin/env/python3
+
 import os
 
 def get_github_id(username, token):
