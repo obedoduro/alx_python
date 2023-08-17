@@ -39,4 +39,5 @@ if __name__ == "__main__":
     
     else:
         url = sys.argv[1]
-        errorcode(url)
+        
+errorcode(url)
