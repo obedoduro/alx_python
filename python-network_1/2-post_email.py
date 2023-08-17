@@ -22,5 +22,5 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
 
-    response_body = post_email(url, email)
+    response_body = take_url_and_email(url, email)
     print(response_body)
