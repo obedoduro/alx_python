@@ -25,8 +25,8 @@ def errorcode(url):
         if reponse.status_code >= 400:
             print(f"Error code: {response.status_code}")
         
-        if response.status_code < 400:
-            print("Regular request")
+        # if response.status_code < 400:
+        #     print("Regular request")
 
 
     except requests.exceptions.RequestException as e:
@@ -34,9 +34,8 @@ def errorcode(url):
 
 
 if __name__ == "__main__":
-
-
-    url = sys.argv[1]
-
-    response_body = errorcode(url)
-    print(response_body)
+    if len(sys.argv) < 2:
+        print("Please provide a URL as an argument.")
+    else:
+        url = sys.argv[1]
+        fetch_and_display_response(url)
