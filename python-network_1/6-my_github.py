@@ -22,7 +22,7 @@ def get_github_id(username, token):
             else:
                 print("Unable to retrieve GitHub ID.")
         elif response.status_code == 401:
-            pass
+            print("None")
         else:
             print(f"An error occurred. Status code: {response.status_code}")
     except requests.exceptions.RequestException as e:
