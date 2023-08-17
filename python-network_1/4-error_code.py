@@ -34,10 +34,11 @@ def errorcode(url):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Please provide as an argument.")
-    
-    else:
-        url = sys.argv[1]
-        
-errorcode(url)
+    if len(sys.argv)  != 3:
+        print("Usage: {} <URL> <email>".format(sys.argv[0]))
+        sys.exit(1)
+
+    url = sys.argv[1]
+
+    response_body = errorcode(url)
+    print(response_body)
