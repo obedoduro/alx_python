@@ -1,28 +1,27 @@
-#!/usr/bin/env/python3
+#!/usr/bin/env python3
+"""
+Sends a request to a URL and displays the value of the X-Request-Id header in the response.
+"""
 
 import requests
 import sys
 
-"""
-print(__import__("my_module").__doc__)
-"""
-def  takes_a_url_and_display(url):
+def fetch_request_id(url):
     """
-    Sends a request to the given URL with the X-Request-Id header and displays the response.
+    Fetches the value of the X-Request-Id header from the response of the given URL.
     """
-    headers = {'X-Request-Id': 'School'}
-    response = requests.get(url, headers=headers)
-    return response.text
-    
-# print("Body response:")
-# print("\t- type:", type(response.text))
-# print("\t- content:", response.text)
+    response = requests.get(url)
+    request_id = response.headers.get('X-Request-Id')
+    return request_id
 
-if  __name__ == "__main__":
+if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: {} <URL>".format(sys.argv[0]))
         sys.exit(1)
 
     url = sys.argv[1]
-    response = fetch_response(url)
-    print(response)
+    request_id = fetch_request_id(url)
+    if request_id:
+        print(request_id)
+    else:
+        print("X-Request-Id header not found in the response.")
