@@ -7,11 +7,12 @@ import sys
 print(__import__("my_module").__doc__)
 """
 def  takes_a_url_and_display(url):
-
-
-    response = requests.get(url)
-    request_id = response.headers.get('X-Request-Id')
-    return request_id
+    """
+    Sends a request to the given URL with the X-Request-Id header and displays the response.
+    """
+    headers = {'X-Request-Id': 'School'}
+    response = requests.get(url, headers=headers)
+    return response.text
     
 # print("Body response:")
 # print("\t- type:", type(response.text))
@@ -23,8 +24,5 @@ if  __name__ == "__main__":
         sys.exit(1)
 
     url = sys.argv[1]
-    request_id = fetch_request_id(url)
-    if request_id:
-        print(request_id)
-    else:
-        print("X-Request-Id header not found in the response.")
+    response = fetch_response(url)
+    print(response)
