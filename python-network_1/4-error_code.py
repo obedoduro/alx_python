@@ -38,4 +38,4 @@ if __name__ == "__main__":
         print("Please provide a URL as an argument.")
     else:
         url = sys.argv[1]
-        fetch_and_display_response(url)
+        errorcode(url)
