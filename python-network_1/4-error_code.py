@@ -7,6 +7,15 @@ import sys
 errorcode takes Url , send request to Url and display the body
 """
 def errorcode(url):
+    """
+    Fetches the content of a URL and displays the response body.
+    
+    If the HTTP status code is greater than or equal to 400, an error message
+    is printed along with the error code.
+    
+    Args:
+        url (str): The URL to send a request to.
+    """
 
     try:
         response = requests.get(url)
