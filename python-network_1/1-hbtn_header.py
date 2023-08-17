@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sends a request to a URL and displays the value of the X-Request-Id header in the response.
+Sends a request to a URL then displays the value of the X-Request-Id header in the response.
 """
 
 import requests
@@ -24,4 +24,4 @@ if __name__ == "__main__":
     if request_id:
         print(request_id)
     else:
-        print("X-Request-Id header not found in the response.")
+        pass
