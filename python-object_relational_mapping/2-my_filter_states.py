@@ -9,7 +9,8 @@ def search_states(username, password, database_name, state_name):
             passwd=password,
             host='localhost',
             port=3306,
-            db=database_name
+            db=database_name,
+            charset='utf8'
         )
 
         # Create a cursor object to interact with the database
