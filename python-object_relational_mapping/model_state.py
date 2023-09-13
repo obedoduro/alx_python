@@ -3,7 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-# Creating a State class inherting a Base 
+
+# Creating a State class inherting a Base
 class State(Base):
     """
     Represents a state in a database.
@@ -16,18 +17,19 @@ class State(Base):
     """
     __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True, 
-                nullable=False, 
+    id = Column(Integer, primary_key=True,
+                nullable=False,
                 autoincrement=True)
     name = Column(String(128), nullable=False)
+
 
 # Example usage of creating tables:
 if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import Session
 
-    # Replace 'your_username', 'your_password', 
-    # and 'your_database' with your MySQL credentials 
+    # Replace 'your_username', 'your_password',
+    # and 'your_database' with your MySQL credentials
     # and database name
     engine = create_engine(
         'mysql://your_username:your_password@localhost:3306/your_database')
