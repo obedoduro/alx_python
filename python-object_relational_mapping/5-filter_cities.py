@@ -1,6 +1,7 @@
 import MySQLdb
 import sys
 
+
 def list_cities_by_state(username, password, database_name, state_name):
     try:
         # Connect to the MySQL server
@@ -16,7 +17,9 @@ def list_cities_by_state(username, password, database_name, state_name):
         cursor = connection.cursor()
 
         # Create the SQL query with placeholders and pass user input as a tuple
-        query = "SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
+        query = (f"SELECT cities.name FROM cities JOIN states ON "
+                 f"cities.state_id = states.id WHERE states.name = %s "
+                 f"ORDER BY cities.id ASC")
         cursor.execute(query, (state_name,))
 
         # Fetch all the rows
@@ -39,5 +42,6 @@ if __name__ == "__main__":
     if len(sys.argv) != 5:
         print("Usage: python script.py <username> <password> <database_name> <state_name>")
     else:
-        username, password, database_name, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+        username, password =  sys.argv[1], sys.argv[2]
+        database_name, state_name = sys.argv[3], sys.argv[4]
         list_cities_by_state(username, password, database_name, state_name)
