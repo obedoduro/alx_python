@@ -1,36 +1,30 @@
-import MySQLdb
 import sys
+from sqlalchemy import create_engine, MetaData, Table
 
 def list_states(username, password, database_name):
+    """List all states from the hbtn_0e_0_usa database."""
     try:
-        # Connect to the MySQL server
-        connection = MySQLdb.connect(
-            user=username,
-            passwd=password,
-            host='localhost',
-            port=3306,
-            db=database_name
-        )
+        # Create a SQLAlchemy engine to connect to the database
+        engine = create_engine(f"mysql://{username}:{password}@localhost:3306/{database_name}")
 
-        # Create a cursor object to interact with the database
-        cursor = connection.cursor()
+        # Create a SQLAlchemy metadata object
+        metadata = MetaData()
 
-        # Execute the SQL query to retrieve states sorted by id
-        cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+        # Define the 'states' table
+        states = Table('states', metadata, autoload=True, autoload_with=engine)
 
-        # Fetch all the rows
-        states = cursor.fetchall()
+        # Retrieve states sorted by ID
+        result = engine.execute(states.select().order_by(states.c.id))
 
         # Display the results
-        for state in states:
-            print(state)
+        for row in result:
+            print(row)
 
-    except MySQLdb.Error as e:
+    except Exception as e:
         print(f"Error: {e}")
     finally:
-        # Close the cursor and connection
-        cursor.close()
-        connection.close()
+        # Close the database connection
+        engine.dispose()
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
