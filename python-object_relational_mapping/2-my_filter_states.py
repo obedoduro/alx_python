@@ -22,7 +22,7 @@ def search_states(username, password, database_name, state_name):
         cursor.execute(query)
 
         # Fetch all the rows
-        states = cursor.fetchone()
+        states = cursor.fetchall()
 
         # Display the results
         for state in states:
