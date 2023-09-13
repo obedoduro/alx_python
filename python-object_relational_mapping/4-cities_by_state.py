@@ -37,6 +37,6 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database_name>")
     else:
-        username = sys.argv[1],
+        username = sys.argv[1]
         password, database_name = sys.argv[2], sys.argv[3]
         list_cities(username, password, database_name)
