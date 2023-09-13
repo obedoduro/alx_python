@@ -17,9 +17,9 @@ def list_cities_by_state(username, password, database_name, state_name):
         cursor = connection.cursor()
 
         # Create the SQL query with placeholders and pass user input as a tuple
-        query = (f"SELECT cities.name FROM cities JOIN states ON "
-                 f"cities.state_id = states.id WHERE states.name = %s "
-                 f"ORDER BY cities.id ASC")
+        query = ("SELECT cities.name FROM cities JOIN states ON "
+                 "cities.state_id = states.id WHERE states.name = %s "
+                 "ORDER BY cities.id ASC")
         cursor.execute(query, (state_name,))
 
         # Fetch all the rows
@@ -40,8 +40,8 @@ def list_cities_by_state(username, password, database_name, state_name):
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print(f"Usage: python script.py <username>"
-              f" <password> <database_name> <state_name>")
+        print("Usage: python script.py <username>"
+              " <password> <database_name> <state_name>")
     else:
         username, password = sys.argv[1], sys.argv[2]
         database_name, state_name = sys.argv[3], sys.argv[4]
