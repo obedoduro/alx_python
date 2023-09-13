@@ -22,9 +22,11 @@ def list_cities_by_state(username, password, database_name, state_name):
         # Fetch all the rows
         cities = cursor.fetchall()
 
-        # Display the results
-        for city in cities:
-            print(city)
+        # Extract city names and join them into a comma-separated string
+        city_names = ', '.join(city[0] for city in cities)
+
+        # Display the comma-separated city names
+        print(city_names)
 
     except MySQLdb.Error as e:
         print(f"Error: {e}")
