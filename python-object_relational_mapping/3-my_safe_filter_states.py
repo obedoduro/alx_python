@@ -41,4 +41,4 @@ if __name__ == "__main__":
         search_states(username, password, database_name, state_name)
     else:
         print("Usage: python script.py <username> ")
-        
+      
