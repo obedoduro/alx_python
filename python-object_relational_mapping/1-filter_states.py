@@ -5,10 +5,10 @@ def list_states_starting_with_n(username, password, database_name):
     try:
         # Connnect to the MYSQL server
         connection = MySQLdb.connect(
-            user = username,
+            user=username,
             passwd=password,
-            host = 'localhost',
-            port = 3306,
+            host='localhost',
+            port=3306,
             db=database_name
             )
 
