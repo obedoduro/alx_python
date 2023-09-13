@@ -16,7 +16,7 @@ def list_cities_by_state(username, password, database_name, state_name):
         cursor = connection.cursor()
 
         # Create the SQL query with placeholders and pass user input as a tuple
-        query = "SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
+        query = "SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
         cursor.execute(query, (state_name,))
 
         # Fetch all the rows
