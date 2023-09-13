@@ -16,7 +16,7 @@ def list_states_starting_with_n(username, password, database_name):
         # Create cursor object to interact with database
         cursor = connection.cursor()
 
-        # Execute the SQL query to retrieve 
+        # Execute the SQL query to retrieve
         # states starting with 'N' sorted by id
         cursor.execute(
             "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
@@ -41,5 +41,5 @@ if __name__ == "__main__":
         print("Usage: python script.py <username> <password> <database_name>")
     else:
         username = sys.argv[1]
-        password,  database_name =  sys.argv[2], sys.argv[3]
+        password,  database_name = sys.argv[2], sys.argv[3]
         list_states_starting_with_n(username, password, database_name)
