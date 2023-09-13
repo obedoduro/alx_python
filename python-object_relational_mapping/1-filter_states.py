@@ -1,9 +1,10 @@
 import MySQLdb
 import sys
 
+
 def list_states_starting_with_n(username, password, database_name):
     try:
-        # Connect to the MySQL server
+        # Connnect to the MYSQL server
         connection = MySQLdb.connect(
             user=username,
             passwd=password,
@@ -12,11 +13,12 @@ def list_states_starting_with_n(username, password, database_name):
             db=database_name
         )
 
-        # Create a cursor object to interact with the database
+        # Create cursor object to interact with database
         cursor = connection.cursor()
 
         # Execute the SQL query to retrieve states starting with 'N' sorted by id
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        cursor.execute(
+            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
         # Fetch all the rows
         states = cursor.fetchall()
@@ -32,9 +34,10 @@ def list_states_starting_with_n(username, password, database_name):
         cursor.close()
         connection.close()
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database_name>")
     else:
-        username, password, database_name = sys.argv[1], sys.argv[2], sys.argv[3]
+        username, password, database_name = sys.argv[1], sys.argv[2], sys.arg[3]
         list_states_starting_with_n(username, password, database_name)
