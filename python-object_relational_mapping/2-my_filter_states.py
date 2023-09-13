@@ -16,9 +16,9 @@ def search_states(username, password, database_name, state_name):
         # Create a cursor object to interact with the database
         cursor = connection.cursor()
 
-        # Create the SQL query with a parameterized query
-        query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-        cursor.execute(query, (state_name,))
+        # Create the SQL query using format and user input
+        query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+        cursor.execute(query)
 
         # Fetch all the rows
         states = cursor.fetchall()
