@@ -1,6 +1,7 @@
 import MySQLdb
 import sys
 
+
 def search_states(username, password, database_name, state_name):
     try:
         # Connect to the MySQL server
@@ -16,9 +17,9 @@ def search_states(username, password, database_name, state_name):
         # Create a cursor object to interact with the database
         cursor = connection.cursor()
 
-        # Create the SQL query using format and user input
-        query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
-        cursor.execute(query)
+        # Create the SQL query with a parameterized query and a case-insensitive search
+        query = "SELECT * FROM states WHERE LOWER(name) = LOWER(%s) ORDER BY id ASC"
+        cursor.execute(query, (state_name,))
 
         # Fetch all the rows
         states = cursor.fetchall()
@@ -36,7 +37,8 @@ def search_states(username, password, database_name, state_name):
 
 if __name__ == "__main__":
     if len(sys.argv) == 5:
-        username, password, database_name, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+        username, password = sys.argv[1], sys.argv[2] 
+        database_name, state_name =  sys.argv[3], sys.argv[4]
         search_states(username, password, database_name, state_name)
     else:
         print("Usage: python script.py <username> <password> <database_name> <state_name>")
