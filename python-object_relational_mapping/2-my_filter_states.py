@@ -21,8 +21,8 @@ def search_states(username, password, database_name, state_name):
         query = "SELECT * FROM states WHERE LOWER(name) = LOWER(%s) ORDER BY id ASC"
         cursor.execute(query, (state_name,))
 
-        # Fetch all the rows
-        states = cursor.fetchall()
+        # Fetch the first row (if found)
+        state = cursor.fetchone()
 
         # Display the results
         for state in states:
