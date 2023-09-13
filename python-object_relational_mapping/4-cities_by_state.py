@@ -17,8 +17,9 @@ def list_cities(username, password, database_name):
         cursor = connection.cursor()
 
         # Execute the SQL query to retrieve cities with their respective states
-        cursor.execute(f"SELECT cities.id," 
-        f"cities.name, states.name FROM cities JOIN states ON cities.state_id = states.id "
+        cursor.execute(f"SELECT cities.id,"
+        f"cities.name, states.name FROM cities JOIN states "
+        f"ON cities.state_id = states.id "
         f"ORDER BY cities.id ASC")
 
         # Fetch all the rows
