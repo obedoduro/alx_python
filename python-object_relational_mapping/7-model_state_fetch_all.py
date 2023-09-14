@@ -23,7 +23,7 @@ def list_states(username, password, database_name):
     except Exception as e:
         print(f"Error: {e}")
     finally:
-        # Close the session and engine
+        # Close the session and engine immediately
         session.close()
         engine.dispose()
 
