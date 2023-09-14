@@ -19,7 +19,7 @@ def search_states(username, password, database_name, state_name):
 
         # Create the SQL query using format and user input
         query = ("SELECT * FROM states "
-                "WHERE name = '{}' ORDER BY id ASC".format(state_name))
+                 "WHERE name = '{}' ORDER BY id ASC".format(state_name))
         cursor.execute(query)
 
         # Fetch all the rows
