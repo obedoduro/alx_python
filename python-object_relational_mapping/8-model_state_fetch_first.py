@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
 
+
 def print_first_state(username, password, database_name):
     # Create a SQLAlchemy engine to connect to the MySQL server
     engine = create_engine(f"mysql://{username}:"
