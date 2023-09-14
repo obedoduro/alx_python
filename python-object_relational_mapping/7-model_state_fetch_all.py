@@ -6,7 +6,10 @@ from model_state import Base, State
 
 def list_states(username, password, database_name):
     # Create a SQLAlchemy engine to connect to the MySQL server
-    engine = create_engine(f"mysql://{username}:{password}@localhost:3306/{database_name}")
+    engine = create_engine(f"mysql://{username}:"
+                           f"{password}"
+                           f"@localhost:3306/"
+                           f"{database_name}")
 
     # Create a session to interact with the database
     session = Session(engine)
