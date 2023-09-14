@@ -5,7 +5,10 @@ from model_state import Base, State
 
 def print_first_state(username, password, database_name):
     # Create a SQLAlchemy engine to connect to the MySQL server
-    engine = create_engine(f"mysql://{username}:{password}@localhost:3306/{database_name}")
+    engine = create_engine(f"mysql://{username}:"
+                           f"{password}"
+                           f"@localhost:3306/"
+                           f"{database_name}")
 
     # Create a session to interact with the database
     session = Session(engine)
@@ -31,5 +34,6 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database_name>")
     else:
-        username, password, database_name = sys.argv[1], sys.argv[2], sys.argv[3]
-        print_first_state(username, password, database_name)
+        username, password = sys.argv[1], sys.argv[2]
+        database_name = sys.argv[3]
+        list_states(username, password, database_name)
