@@ -38,7 +38,7 @@ def search_states(username, password, database_name, state_name):
 
 if __name__ == "__main__":
     if len(sys.argv) == 5:
-        username, password = sys.argv[1], sys.argv[2] 
+        username, password = sys.argv[1], sys.argv[2]
         database_name, state_name = sys.argv[3], sys.argv[4]
         search_states(username, password, database_name, state_name)
     else:
