@@ -4,6 +4,10 @@ from flask import Flask, escape
 app = Flask(__name__)
 
 # Define a route for the root path with strict_slashes=False
+"""
+This module helps route in the function HBNB
+
+"""
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """
@@ -16,6 +20,10 @@ def hello_hbnb():
     return "Hello HBNB!"
 
 # Define a route for /hbnb with strict_slashes=False
+"""
+This module helps route in the function HBNB
+
+"""
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
@@ -28,6 +36,10 @@ def hbnb():
     return "HBNB"
 
 # Define a route for /c/<text> with strict_slashes=False
+"""
+This module helps route in the function HBNB
+
+"""
 @app.route('/c/<text>', strict_slashes=False)
 @app.route('/c/', strict_slashes=False)
 def c_text(text="is_cool"):
@@ -46,6 +58,10 @@ def c_text(text="is_cool"):
     return "C " + formatted_text
 
 # Define a route for /python/<text> with strict_slashes=False
+"""
+This module helps route in the function HBNB
+
+"""
 @app.route('/python/<text>', strict_slashes=False)
 @app.route('/python/', strict_slashes=False)
 def python_text(text="is_cool"):
