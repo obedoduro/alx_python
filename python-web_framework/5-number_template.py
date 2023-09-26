@@ -122,9 +122,9 @@ def number_template(n):
         str: The HTML page with the H1 tag.
     """
     if isinstance(n, int):
-        return render_template('number_template.html', n=n)
+        return render_template('number_template.html', n=n), 200
     else:
-        return "Not a number"
+        return "Not a number", 400
 
 # Run the application on 0.0.0.0:5000
 if __name__ == '__main__':
