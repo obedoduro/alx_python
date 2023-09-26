@@ -1,9 +1,19 @@
+"""
+This is a sample module to run on
+host 0.0.0
+port 5000
+"""
 from flask import Flask
 
 # Create a Flask web application
 app = Flask(__name__)
 
+
 # Define a route for the root path with strict_slashes=False
+"""
+This module helps route in the function hello_HBNB
+
+"""
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """
@@ -16,6 +26,10 @@ def hello_hbnb():
     return "Hello HBNB!"
 
 # Define a route for /hbnb with strict_slashes=False
+"""
+This module helps route in the function HBNB
+
+"""
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
