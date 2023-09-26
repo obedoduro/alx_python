@@ -1,9 +1,18 @@
+"""
+This is a sample module to run on
+host 0.0.0
+port 5000
+"""
 from flask import Flask, escape, render_template
 
 # Create a Flask web application
 app = Flask(__name__)
 
 # Define a route for the root path with strict_slashes=False
+"""
+This module helps route in the function hello HBNB
+
+"""
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """
@@ -16,6 +25,10 @@ def hello_hbnb():
     return "Hello HBNB!"
 
 # Define a route for /hbnb with strict_slashes=False
+"""
+This module helps route in the function HBNB
+
+"""
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
@@ -28,6 +41,10 @@ def hbnb():
     return "HBNB"
 
 # Define a route for /c/<text> with strict_slashes=False
+"""
+This module helps route in the function c_text
+
+"""
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     """
@@ -45,6 +62,10 @@ def c_text(text):
     return "C " + formatted_text
 
 # Define a route for /python/<text> with strict_slashes=False
+"""
+This module helps route in the function python_text
+
+"""
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
     """
@@ -62,6 +83,10 @@ def python_text(text):
     return "Python " + formatted_text
 
 # Define a route for /number/<n> with strict_slashes=False
+"""
+This module helps route in the function is_number
+
+"""
 @app.route('/number/<int:n>', strict_slashes=False)
 def is_number(n):
     """
@@ -80,6 +105,10 @@ def is_number(n):
         return "Not a number"
 
 # Define a route for /number_template/<n> with strict_slashes=False
+"""
+This module helps route in the function number_template
+
+"""
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """
@@ -98,6 +127,10 @@ def number_template(n):
         return "Not a number"
 
 # Define a route for /number_odd_or_even/<n> with strict_slashes=False
+"""
+This module helps route in the function number_odd_or_even
+
+"""
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def number_odd_or_even(n):
     """
