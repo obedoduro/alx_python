@@ -6,11 +6,17 @@ app = Flask(__name__)
 # Define a route for the root path with strict_slashes=False
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
+    """
+    This route displays "Hello HBNB!"
+    """
     return "Hello HBNB!"
 
 # Define a route for /hbnb with strict_slashes=False
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
+    """
+    This route displays "HBNB"
+    """
     return "HBNB"
 
 # Run the application on 0.0.0.0:5000
