@@ -15,7 +15,7 @@ import sys
 
 def export_employee_todo_progress(employee_id):
     base_url = "https://jsonplaceholder.typicode.com"
-    print("Correct USER_ID: OK")
+
     # Get employee details
     employee_response = requests.get(f"{base_url}/users/{employee_id}")
     employee_data = employee_response.json()
@@ -25,7 +25,6 @@ def export_employee_todo_progress(employee_id):
     # Get employee's TODO list
     todo_response = requests.get(f"{base_url}/users/{employee_id}/todos")
     todo_data = todo_response.json()
-    print("Correct USER_ID: OK")
 
     # Create a JSON structure for the employee's TODO list
     todo_list = {
@@ -38,13 +37,12 @@ def export_employee_todo_progress(employee_id):
             for task in todo_data
         ]
     }
-    print("Correct USER_ID: OK")
 
     # Write the JSON data to a file
     json_file_name = f"{user_id}.json"
     with open(json_file_name, "w") as json_file:
         json.dump(todo_list, json_file, indent=4)
-    print("Correct USER_ID: OK")
+        
 
     # Check if the JSON file has the correct USER_ID
     with open(json_file_name, "r") as json_file:
@@ -60,13 +58,9 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <employee_id>")
         sys.exit(1)
-        print("Correct USER_ID: OK")
 
     try:
         employee_id = int(sys.argv[1])
-        print(export_employee_todo_progress(employee_id))
-        print("Correct USER_ID: OK")
+        export_employee_todo_progress(employee_id)
     except ValueError:
         print("Employee ID must be an integer.")
-        print("Correct USER_ID: OK")
-print("Correct USER_ID: OK")
