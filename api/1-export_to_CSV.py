@@ -1,7 +1,8 @@
 import csv
+import os
 import requests
 import sys
-import os  # Import the os module
+
 
 def user_info(employee_id):
     """
