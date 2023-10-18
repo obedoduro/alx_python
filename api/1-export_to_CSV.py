@@ -1,10 +1,11 @@
 import csv
 import requests
 import sys
+import os  # Import the os module
 
-def export_employee_todo_progress(employee_id):
+def user_info(employee_id):
     """
-    Export an employee's TODO list progress in CSV format.
+    Get information about an employee's TODO list progress.
 
     Args:
         employee_id (int): The employee's ID.
@@ -20,24 +21,19 @@ def export_employee_todo_progress(employee_id):
     user_id = employee_data.get("id")
     username = employee_data.get("username")
 
-    # Get employee's TODO list
-    todo_response = requests.get(f"{base_url}/users/{employee_id}/todos")
-    todo_data = todo_response.json()
-
-    # Create a CSV file for the employee's TODO list
+    # Check if the CSV file exists before trying to open it
     csv_file_name = f"{user_id}.csv"
-    with open(csv_file_name, mode="w", newline="") as csv_file:
-        csv_writer = csv.writer(csv_file, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
-        # Write the CSV header
-        csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-
-        # Write the TODO list data to the CSV file
-        for task in todo_data:
-            task_completed_status = "True" if task.get("completed") else "False"
-            csv_writer.writerow([user_id, username, task_completed_status, task.get("title")])
-
-    print(f"Data has been exported to {csv_file_name}")
+    if os.path.exists(csv_file_name):
+        with open(csv_file_name, 'r') as f:
+            csv_reader = csv.reader(f)
+            next(csv_reader)  # Skip the header
+            completed_tasks = 0
+            for row in csv_reader:
+                if row[2] == 'True':
+                    completed_tasks += 1
+        print(f"Number of tasks in CSV: {completed_tasks}/{completed_tasks + len(row)}")
+    else:
+        print("CSV file not found.")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -46,6 +42,6 @@ if __name__ == "__main__":
 
     try:
         employee_id = int(sys.argv[1])
-        export_employee_todo_progress(employee_id)
+        user_info(employee_id)
     except ValueError:
         print("Employee ID must be an integer.")
