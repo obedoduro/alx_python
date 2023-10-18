@@ -1,17 +1,20 @@
+"""
+Export an employee's TODO list progress in JSON format.
+
+This script retrieves an employee's TODO list from a REST API and exports it in JSON format. The JSON data is structured as { "USER_ID": [{"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ... ] }.
+
+Usage:
+    python script.py <employee_id>
+"""
+
+
 import requests
 import json
 import sys
 
+
 def export_employee_todo_progress(employee_id):
-    """
-    Export an employee's TODO list progress in JSON format.
 
-    Args:
-        employee_id (int): The employee's ID.
-
-    Returns:
-        None
-    """
     base_url = "https://jsonplaceholder.typicode.com"
 
     # Get employee details
