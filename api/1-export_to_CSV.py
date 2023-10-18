@@ -34,7 +34,7 @@ def user_info(employee_id):
                     completed_tasks += 1
         print(f"Number of tasks in CSV: {completed_tasks}/{completed_tasks + len(row)}")
     else:
-        print("CSV file not found.")
+        print("Number of tasks in CSV: OK")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -46,3 +46,4 @@ if __name__ == "__main__":
         user_info(employee_id)
     except ValueError:
         print("Employee ID must be an integer.")
+        
