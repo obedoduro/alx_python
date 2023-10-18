@@ -3,6 +3,15 @@ import json
 import sys
 
 def export_employee_todo_progress(employee_id):
+    """
+    Export an employee's TODO list progress in JSON format.
+
+    Args:
+        employee_id (int): The employee's ID.
+
+    Returns:
+        None
+    """
     base_url = "https://jsonplaceholder.typicode.com"
 
     # Get employee details
