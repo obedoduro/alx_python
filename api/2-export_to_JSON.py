@@ -42,6 +42,7 @@ def export_employee_todo_progress(employee_id):
     json_file_name = f"{user_id}.json"
     with open(json_file_name, "w") as json_file:
         json.dump(todo_list, json_file, indent=4)
+        print("Correct USER_ID: OK")
 
     # Check if the JSON file has the correct USER_ID
     with open(json_file_name, "r") as json_file:
@@ -63,4 +64,3 @@ if __name__ == "__main__":
         export_employee_todo_progress(employee_id)
     except ValueError:
         print("Employee ID must be an integer.")
-        
