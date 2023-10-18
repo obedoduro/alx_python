@@ -14,7 +14,6 @@ import sys
 
 
 def export_employee_todo_progress(employee_id):
-
     base_url = "https://jsonplaceholder.typicode.com"
 
     # Get employee details
@@ -51,7 +50,6 @@ def export_employee_todo_progress(employee_id):
             print("Correct USER_ID: OK")
         else:
             print("Correct USER_ID: NOT OK")
-            
 
     print(f"Data has been exported to {json_file_name}")
 
@@ -65,3 +63,4 @@ if __name__ == "__main__":
         export_employee_todo_progress(employee_id)
     except ValueError:
         print("Employee ID must be an integer.")
+        
