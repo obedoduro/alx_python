@@ -44,6 +44,15 @@ def export_employee_todo_progress(employee_id):
     with open(json_file_name, "w") as json_file:
         json.dump(todo_list, json_file, indent=4)
 
+    # Check if the JSON file has the correct USER_ID
+    with open(json_file_name, "r") as json_file:
+        data = json.load(json_file)
+        if user_id == list(data.keys())[0]:
+            print("Correct USER_ID: OK")
+        else:
+            print("Correct USER_ID: NOT OK")
+            
+
     print(f"Data has been exported to {json_file_name}")
 
 if __name__ == "__main__":
