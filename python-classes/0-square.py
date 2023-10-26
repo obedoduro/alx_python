@@ -17,8 +17,9 @@ class Square:
             None
         """
         self.__size = size
+    return self.size
 
 # Example usage
 my_square = Square(3)
-print()
+#print()
 #print(my_square.__dict__)
