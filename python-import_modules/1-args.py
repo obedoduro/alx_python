@@ -7,7 +7,7 @@ def main():
     if num_args == 1:
         print(f"{num_args} argument:")
     else:
-        print(f"{num_args} arguments: ")
+        print(f"{num_args} arguments:")
 
    # Print a colon or period depending on the number of arguments
     # if num_args > 0:
