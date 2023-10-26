@@ -1,15 +1,9 @@
 #!/usr/bin/python3
+from add_0 import add
 
-#function to add a and b
-def add_0(a, b):
-    return a + b
+a = 1
+b = 2
 
-#main function to start from
-def main():
-    a = 1
-    b = 2
-    result = add_0(a, b)
-    print('{} + {} = {}'.format(a, b, result))
+result = add(a, b)
 
-if __name__ == "__main__":
-    main()
+print("{} + {} = {}".format(a, b, result))
