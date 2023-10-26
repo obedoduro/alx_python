@@ -14,8 +14,8 @@ def main():
         print(":")
 
    # Print the arguments and their positions
-for i in range(num_args):
-    print(f"{i + 1}: {sys.argv[i + 1]}")
+    for i in range(num_args):
+     print(f"{i + 1}: {sys.argv[i + 1]}")
 
 
 
