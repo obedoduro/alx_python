@@ -5,7 +5,7 @@ def main():
 
     # Print the number of argument(s)
     if num_args == 1:
-        print(f"Number of argument: {num_args}")
+        print(f"{num_args}: argument")
     else:
         print(f"Number of arguments: {num_args}")
 
