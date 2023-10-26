@@ -5,13 +5,13 @@ def main():
 
     # Print the number of argument(s)
     if num_args == 1:
-        print(f"{num_args}argument:")
+        print(f"{num_args} argument:")
     else:
         print(f"Number of arguments: {num_args}")
 
    # Print a colon or period depending on the number of arguments
-    if num_args > 0:
-        print(":")
+    # if num_args > 0:
+    #     #print(":")
 
    # Print the arguments and their positions
     for i in range(num_args):
