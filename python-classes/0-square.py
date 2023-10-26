@@ -1,13 +1,23 @@
 class Square:
-    """class to handle square of values 
-    pass and return the shit
-    Attributes:
-    size    The value passed to be squared.
     """
+    This class represents a square.
+
+    Attributes:
+        __size (int): The size of the square.
+    """
+
     def __init__(self, size):
-        """ initialisation of function to handle prerequire values"""
+        """
+        Initializes a new Square instance with the given size.
+
+        Args:
+            size (int): The size of the square.
+
+        Returns:
+            None
+        """
         self.__size = size
-    return self.__size
+
 # Example usage
 my_square = Square(3)
 #print(type(my_square))
