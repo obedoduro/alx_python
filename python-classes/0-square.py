@@ -22,4 +22,4 @@ class Square:
 
 # Example usage
 my_square = Square(3)
-print()
+# print()
