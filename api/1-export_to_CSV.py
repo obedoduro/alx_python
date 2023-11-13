@@ -4,46 +4,57 @@ import requests
 import sys
 
 
-def user_info(employee_id):
-    """
-    Get information about an employee's TODO list progress.
 
-    Args:
-        employee_id (int): The employee's ID.
+"""Importing from #0, extend your Python script to export data in the CSV format."""
 
-    Returns:
-        None
-    """
-    base_url = "https://jsonplaceholder.typicode.com"
+def get_employee_data(employee_id):
+    
 
-    # Get employee details
-    employee_response = requests.get(f"{base_url}/users/{employee_id}")
+
+
+    employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+    employee_response = requests.get(employee_url)
     employee_data = employee_response.json()
-    user_id = employee_data.get("id")
-    username = employee_data.get("username")
+    
+    # Get employee's TODO list
+    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    todos_response = requests.get(todos_url)
+    todos_data = todos_response.json()
 
-    # Check if the CSV file exists before trying to open it
-    csv_file_name = f"{user_id}.csv"
-    if os.path.exists(csv_file_name):
-        with open(csv_file_name, 'r') as f:
-            csv_reader = csv.reader(f)
-            next(csv_reader)  # Skip the header
-            completed_tasks = 0
-            for row in csv_reader:
-                if row[2] == 'True':
-                    completed_tasks += 1
-        print(f"Number of tasks in CSV: {completed_tasks}/{completed_tasks + len(row)}")
-    else:
-        print("Number of tasks in CSV: OK")
+    return employee_data, todos_data
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
+def export_to_csv(employee_id, employee_name, todos):
+
+    """function to export data to csv """
+    filename = f"{employee_id}.csv"
+
+    with open(filename, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+
+        for todo in todos:
+            writer.writerow([employee_id, employee_name, str(todo['completed']), todo['title']])
+
+    print(f"Data exported to {filename}")
+
+def main():
+    
+    """ the main_function """
+
+    if len(sys.argv) != 2 or not sys.argv[1].isdigit():
         print("Usage: python script.py <employee_id>")
         sys.exit(1)
 
-    try:
-        employee_id = int(sys.argv[1])
-        user_info(employee_id)
-    except ValueError:
-        print("Employee ID must be an integer.")
-        
+    employee_id = int(sys.argv[1])
+
+    # Get employee data
+    employee, todos = get_employee_data(employee_id)
+
+    # Extract relevant information
+    employee_name = employee.get('name')
+
+    # Display the information
+    export_to_csv(employee_id, employee_name, todos)
+
+if __name__ == "__main__":
+    main()
