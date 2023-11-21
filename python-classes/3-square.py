@@ -3,6 +3,10 @@
 Using the @property decorators 
 """
 class Square:
+    """
+    Getting the area size
+    """
+ 
     
     def __init__(self, size=0):
      self.__size = size
