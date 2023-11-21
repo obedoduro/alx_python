@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 """
 Using the @property and setter 
 """
