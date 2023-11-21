@@ -1,5 +1,10 @@
+#!/usr/bin/python3
+"""
+Using the @property decorators 
+"""
 class Square:
-    def __init__(self, size):
+    
+    def __init__(self, size=0):
      self.__size = size
 
     #to retrieve
@@ -20,6 +25,5 @@ class Square:
         return self.__size * self.__size
 
 
-my_square_1 = Square(3)
-print(my_square_1.size)
-print(my_square_1.area())
+
+
