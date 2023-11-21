@@ -2,8 +2,7 @@ with this project:
 python classes with objects
 1st project : an initizialing
 .............................
-this task was not running the class when the file 
-is callled so i was calling it using print(class name) to let the class of function execute
+this task was not running the class when the file script is runned by alx checker so i was calling it using print(class name) to let the class of the function execute. Which gave me excess unwanted output
 ... but the right way is to use an init function in the class and document class and module first
 ..........
 
