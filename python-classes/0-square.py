@@ -1,25 +1,12 @@
 #!/usr/bin/python3
+
+"""
+Getting the classs size
+"""
 class Square:
     """
-    This class represents a square.
-
-    Attributes:
-        __size (int): The size of the square.
+    Using a function inside a class
     """
-
     def __init__(self, size):
-        """
-        Initializes a new Square instance with the given size.
-
-        Args:
-            size (int): The size of the square.
-
-        Returns:
-            None
-        """
         self.__size = size
-    
-
-# Example usage
-my_square = Square(3)
-print()
+        
