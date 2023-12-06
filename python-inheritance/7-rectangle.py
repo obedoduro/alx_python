@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This is a base class
+    Base class
 """
 BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
