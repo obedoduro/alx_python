@@ -1,4 +1,6 @@
-"""Module for checking class relationships."""
+"""Module for BaseGeometry class."""
+
+
 class BaseGeometry:
     """
     A base class for geometry-related operations.
@@ -18,6 +20,10 @@ class BaseGeometry:
 
 
 # Example usage
-bg = BaseGeometry()
-# Uncommenting the line below would raise a NotImplementedError with a clear error message.
-# print(bg.area())
+if __name__ == "__main__":
+    bg = BaseGeometry()
+
+    try:
+        print(bg.area())
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
