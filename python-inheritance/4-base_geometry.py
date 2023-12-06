@@ -1,3 +1,4 @@
+"""Module for checking class relationships."""
 class BaseGeometry:
     """
     A base class for geometry-related operations.
