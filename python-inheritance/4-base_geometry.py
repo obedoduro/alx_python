@@ -1,29 +1,23 @@
-"""Module for BaseGeometry class."""
+"""
+This module is an empty class 
+"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """
-    A base class for geometry-related operations.
-
-    This class should be inherited by other classes representing specific geometric shapes.
+    This class models an empty class
     """
+    def __dir__(cls) -> None:
+        """
+        control access to some inherited attributes
+        """
+        attributes = super().__dir__()
+        n_attributes = []
+        for attr in attributes:
+            if attr != '__init_subclass__':
+                n_attributes.append(attr)
+        return n_attributes
 
     def area(self):
-        """
-        Calculate the area.
-
-        Raises:
-        - NotImplementedError: This method should be implemented by subclasses.
-        """
-        raise NotImplementedError(
-            "The 'area' method is not implemented in the BaseGeometry class.")
-
-
-# main
-if __name__ == "__main__":
-    bg = BaseGeometry()
-
-    try:
-        print(bg.area())
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+        """a method to raise an exception with a message"""
+        raise Exception("area() is not implemented")
