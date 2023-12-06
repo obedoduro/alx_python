@@ -1,39 +1,57 @@
-#parent class
-class BaseGeometry:
+"""This module raises an exception"""
+
+
+class MetaGeometry(type):
+    """class overrides the dir init subclass in the class"""
+
+    def __dir__(cls):
+        """Magic method that allows you to override default dir"""
+        return (attribute for attribute in super().__dir__() if
+                attribute != '__init_subclass__')
+
+
+class BaseGeometry(metaclass=MetaGeometry):
+    """This class defines a base geometry"""
+
     def area(self):
+        """Public instance method that raises an exception"""
         raise Exception("area() is not implemented")
 
-    def integer_validator(self, name, value):
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+    @staticmethod
+    def integer_validator(name, value):
+        """Public instance method that validates value recieved"""
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        elif value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
+
 
 class Rectangle(BaseGeometry):
+    """class that inherits BaseGeometry"""
+
     def __init__(self, width, height):
+        """instantiation with width and height"""
         self.__width = width
         self.__height = height
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        """Height and width made private"""
+        self.integer_validator('width', self.__width)
+        self.integer_validator('height', self.__height)
+        """using the integer validator method for our variables"""
 
-# calculate area
     def area(self):
+        """calculates and return the area of rectangle"""
         return self.__width * self.__height
 
-#details of rectangle
     def __str__(self):
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        """method returns a string"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
 
 class Square(Rectangle):
+    """class that inherits from rectangle"""
+
     def __init__(self, size):
+        """instantiation with size"""
         self.__size = size
-        self.integer_validator("size", size)
+        super().integer_validator('size', size)
         super().__init__(size, size)
-
-    def __str__(self):
-        return f"[Square] {self.__size}/{self.__size}"
-
-# output
-square = Square(5)
-print(square)
-print("Area:", square.area())
