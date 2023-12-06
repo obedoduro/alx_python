@@ -32,9 +32,9 @@ result1 = is_same_class(obj1, A)  # True
 result2 = is_same_class(obj2, A)  # False
 result3 = is_same_class(obj2, B)  # True
 
-print(result1)
-print(result2)
-print(result3)
+# print(result1)
+# print(result2)
+# print(result3)
 
 a = 1
 print(is_same_class(a, int))  # True
