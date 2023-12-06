@@ -20,10 +20,11 @@ obj1 = A()
 obj2 = B()
 obj3 = C()
 
+a = 1
 #output
-print(is_kind_of_class(obj1, A)) 
-print(is_kind_of_class(obj2, B)) 
-print(is_kind_of_class(obj2, A)) 
-print(is_kind_of_class(obj1, B)) 
-print(is_kind_of_class(obj3, A)) 
-print(is_kind_of_class(obj3, C))  
+# print(is_kind_of_class(obj1, A)) 
+# print(is_kind_of_class(obj2, B)) 
+# print(is_kind_of_class(obj2, A)) 
+# print(is_kind_of_class(obj1, B)) 
+# print(is_kind_of_class(obj3, A)) 
+# print(is_kind_of_class(obj3, C))  
