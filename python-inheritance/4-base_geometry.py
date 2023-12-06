@@ -1,15 +1,15 @@
 """
-This module is an empty class 
+This module should be empty class 
 """
 
 
 class BaseGeometry():
     """
-    This class models an empty class
+    Class models  empty class
     """
     def __dir__(cls) -> None:
         """
-        control access to some inherited attributes
+        access to some inherited attributes
         """
         attributes = super().__dir__()
         n_attributes = []
@@ -19,5 +19,5 @@ class BaseGeometry():
         return n_attributes
 
     def area(self):
-        """a method to raise an exception with a message"""
+        """Method to raise an exception"""
         raise Exception("area() is not implemented")
