@@ -37,4 +37,4 @@ result3 = is_same_class(obj2, B)  # True
 # print(result3)
 
 a = 1
-print(is_same_class(a, int))  # True
+# print(is_same_class(a, int))  # True
