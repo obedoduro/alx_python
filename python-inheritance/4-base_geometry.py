@@ -19,7 +19,7 @@ class BaseGeometry:
             "The 'area' method is not implemented in the BaseGeometry class.")
 
 
-# Example usage
+# main
 if __name__ == "__main__":
     bg = BaseGeometry()
 
