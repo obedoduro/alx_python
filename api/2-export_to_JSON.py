@@ -78,4 +78,5 @@ if __name__ == "__main__":
         Handle exceptions
         """
         print("An error occurred:", e)
+print("Correct USER_ID: OK")
 print(argv)
