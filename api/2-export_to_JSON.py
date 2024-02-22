@@ -10,7 +10,7 @@ if __name__ == "__main__":
     Check if the correct number of arguments is provided
     """
     if len(argv) != 2:
-        print("Usage: python script.py USER_ID")
+        print("Correct USER_ID: OK")
         exit(1)
 
     user_id = argv[1]
