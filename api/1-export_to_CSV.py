@@ -1,14 +1,9 @@
-#!/usr/bin/env python3
-"""
-1-export_to_CSV.py
-Module to gather data from a REST API about an employee's TODO list progress
-and export it to a CSV file.
+"""fetching employee,TODO lists and counting completed tasks
 """
 
-import sys
-import requests
 import csv
-
+import requests
+import sys
 
 def get_employee_todo_progress(employee_id):
     """
