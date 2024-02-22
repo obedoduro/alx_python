@@ -1,3 +1,6 @@
+"""fetching employee,TODO lists and counting completed tasks
+"""
+
 import json
 import requests
 from sys import argv
