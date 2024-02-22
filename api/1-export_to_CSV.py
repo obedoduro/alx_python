@@ -51,3 +51,4 @@ if __name__ == "__main__":
             file_editor.writerow([argv[1], username, v, k])
 
     print('Data exported to {}.csv'.format(argv[1]))
+
