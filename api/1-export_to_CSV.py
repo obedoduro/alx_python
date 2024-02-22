@@ -1,90 +1,52 @@
-"""fetching employee,TODO lists and counting completed tasks
-"""
+#!/usr/bin/python3
 
-import csv
+""" Script that uses JSONPlaceholder API to get information about employees and exports data in CSV format """
 import requests
 import sys
-
-def get_employee_todo_progress(employee_id):
-    """
-    Function to retrieve and display employee TODO list progress.
-
-    Args:
-        employee_id (int): The ID of the employee.
-
-    Returns:
-        list: List of dictionaries containing task details.
-    """
-    # URLs for employee details and their TODO list
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-
-    try:
-        # Fetching data from the API
-        user_response = requests.get(user_url)
-        todo_response = requests.get(todo_url)
-
-        # Handling response status
-        if user_response.status_code != 200:
-            print("Error: Unable to fetch employee details.")
-            return []
-        if todo_response.status_code != 200:
-            print("Error: Unable to fetch employee TODO list.")
-            return []
-
-        # Parsing JSON responses
-        user_data = user_response.json()
-        todo_data = todo_response.json()
-
-        # Constructing list of task dictionaries
-        tasks = []
-        for task in todo_data:
-            task_dict = {
-                "USER_ID": user_data['id'],
-                "USERNAME": user_data['username'],
-                "TASK_COMPLETED_STATUS": task['completed'],
-                "TASK_TITLE": task['title']
-            }
-            tasks.append(task_dict)
-
-        return tasks
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return []
+import csv
 
 
-def export_to_csv(employee_id, tasks):
-    """
-    Function to export task data to a CSV file.
+def fetch_user_info(user_id):
+    url = 'https://jsonplaceholder.typicode.com/'
+    user_url = '{}users/{}'.format(url, user_id)
+    response = requests.get(user_url)
+    user_info = response.json()
+    return user_info
 
-    Args:
-        employee_id (int): The ID of the employee.
-        tasks (list): List of dictionaries containing task details.
 
-    Returns:
-        None
-    """
-    if not tasks:
-        print("No tasks found.")
-        return
+def fetch_user_todos(user_id):
+    url = 'https://jsonplaceholder.typicode.com/'
+    todos_url = '{}todos?userId={}'.format(url, user_id)
+    response = requests.get(todos_url)
+    todos = response.json()
+    return todos
 
-    filename = f"{employee_id}.csv"
-    try:
-        with open(filename, mode='w', newline='') as file:
-            writer = csv.DictWriter(
-                file, fieldnames=["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-            writer.writeheader()
-            writer.writerows(tasks)
-        print(f"Task data exported to {filename}")
-    except Exception as e:
-        print(f"An error occurred while exporting to CSV: {e}")
+
+def export_to_csv(user_id, user_info, todos):
+    filename = '{}.csv'.format(user_id)
+    with open(filename, 'w', newline='') as csvfile:
+        fieldnames = ['USER_ID', 'USERNAME',
+                      'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+
+        for todo in todos:
+            writer.writerow({
+                'USER_ID': user_id,
+                'USERNAME': user_info['username'],
+                'TASK_COMPLETED_STATUS': 'Completed' if todo['completed'] else 'Incomplete',
+                'TASK_TITLE': todo['title']
+            })
+    print(f"CSV file '{filename}' has been created successfully.")
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 1-export_to_CSV.py <employee_id>")
-    else:
-        employee_id = int(sys.argv[1])
-        tasks = get_employee_todo_progress(employee_id)
-        export_to_csv(employee_id, tasks)
+        print("Usage: python script.py <user_id>")
+        sys.exit(1)
+
+    user_id = sys.argv[1]
+    user_info = fetch_user_info(user_id)
+    todos = fetch_user_todos(user_id)
+    export_to_csv(user_id, user_info, todos)
