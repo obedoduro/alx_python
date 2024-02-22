@@ -1,8 +1,10 @@
-"""fetching employee,TODO lists and counting completed tasks
+#!/usr/bin/python3
 """
-
-import requests
+    python script that exports data in the JSON format
+"""
 import json
+import requests
+from sys import argv
 
 
 def export_tasks_to_json(user_id):
