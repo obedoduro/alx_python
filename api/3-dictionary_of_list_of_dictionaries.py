@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """ Script that uses JSONPlaceholder API to get information about employees and exports data in JSON format """
-import requests
 import json
+import requests
+from sys import argv
 
 
 def export_all_tasks_to_json():
