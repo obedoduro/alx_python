@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 """ Script that uses JSONPlaceholder API to get information about employees and exports data in CSV format """
 import requests
 import sys
