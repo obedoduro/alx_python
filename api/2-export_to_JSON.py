@@ -9,7 +9,7 @@ if __name__ == "__main__":
     """
     Check if the correct number of arguments is provided
     """
-    print(argv)
+    
     print("Correct USER_ID: OK")
     
 
@@ -78,3 +78,4 @@ if __name__ == "__main__":
         Handle exceptions
         """
         print("An error occurred:", e)
+print(argv)
