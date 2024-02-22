@@ -1,43 +1,38 @@
-import json
+#!/usr/bin/python3
+
+""" Script that uses JSONPlaceholder API to get information about employees and exports data in JSON format """
 import requests
+import json
 
 
-def export_all_employee_todo_progress():
-    base_url = "https://jsonplaceholder.typicode.com"
+def export_all_tasks_to_json():
+    url = 'https://jsonplaceholder.typicode.com/'
 
-    # Get a list of all employees
-    employees_response = requests.get(f"{base_url}/users")
-    employees_data = employees_response.json()
+    users_response = requests.get(url + 'users')
+    users = users_response.json()
 
-    # Initialize an empty dictionary to store the data
-    all_todo_data = {}
+    all_tasks = {}
+    for user in users:
+        user_id = user['id']
+        username = user['username']
 
-    for employee in employees_data:
-        employee_id = str(employee.get("id"))
-        username = employee.get("username")
+        todos_response = requests.get(url + f'todos?userId={user_id}')
+        todos = todos_response.json()
 
-        # Get employee's TODO list
-        todo_response = requests.get(f"{base_url}/users/{employee_id}/todos")
-        todo_data = todo_response.json()
-
-        # Prepare data for the employee
-        employee_todo_list = [
-            {
+        user_tasks = []
+        for todo in todos:
+            task_info = {
                 "username": username,
-                "task": task.get("title"),
-                "completed": task.get("completed"),
+                "task": todo["title"],
+                "completed": todo["completed"]
             }
-            for task in todo_data
-        ]
+            user_tasks.append(task_info)
 
-        # Add the employee's data to the dictionary
-        all_todo_data[employee_id] = employee_todo_list
+        all_tasks[user_id] = user_tasks
 
-    # Write the data to the JSON file
     with open("todo_all_employees.json", "w") as json_file:
-        json.dump(all_todo_data, json_file, indent=4)
+        json.dump(all_tasks, json_file, indent=4)
 
-    print("Data has been exported to todo_all_employees.json")
 
 if __name__ == "__main__":
-    export_all_employee_todo_progress()
+    export_all_tasks_to_json()
