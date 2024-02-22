@@ -1,8 +1,9 @@
-""" Script that uses JSONPlaceholder API to get information about employees and exports data in CSV format """
+"""fetching employee,TODO lists and counting completed tasks
+"""
+
+import csv
 import requests
 import sys
-import csv
-
 
 def fetch_user_info(user_id):
     url = 'https://jsonplaceholder.typicode.com/'
