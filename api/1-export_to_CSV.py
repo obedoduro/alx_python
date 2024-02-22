@@ -1,49 +1,47 @@
+"""fetching employee,TODO lists and counting completed tasks
+"""
+
 import csv
-import os
 import requests
 import sys
 
 
-def user_info(employee_id):
-    """
-    Get information about an employee's TODO list progress.
-
-    Args:
-        employee_id (int): The employee's ID.
-
-    Returns:
-        None
-    """
-    base_url = "https://jsonplaceholder.typicode.com"
-
+def get_employee_todo_list_progress(employee_id):
     # Get employee details
-    employee_response = requests.get(f"{base_url}/users/{employee_id}")
-    employee_data = employee_response.json()
-    user_id = employee_data.get("id")
-    username = employee_data.get("username")
+    response = requests.get(
+        f'https://jsonplaceholder.typicode.com/users/{employee_id}')
+    employee_name = response.json()['name']
 
-    # Check if the CSV file exists before trying to open it
-    csv_file_name = f"{user_id}.csv"
-    if os.path.exists(csv_file_name):
-        with open(csv_file_name, 'r') as f:
-            csv_reader = csv.reader(f)
-            next(csv_reader)  # Skip the header
-            completed_tasks = 0
-            for row in csv_reader:
-                if row[2] == 'True':
-                    completed_tasks += 1
-        print(f"Number of tasks in CSV: {completed_tasks}/{completed_tasks + len(row)}")
-    else:
-        print("Number of tasks in CSV: OK")
+    # Get employee TODO list
+    response = requests.get(
+        f'https://jsonplaceholder.typicode.com/users/{employee_id}/todos')
+    todos = response.json()
 
-if __name__ == "__main__":
+    # Calculate progress
+    total_tasks = len(todos)
+    done_tasks = len([todo for todo in todos if todo['completed']])
+
+    # Print progress report
+    print(
+        f'Employee {employee_name} is done with tasks({done_tasks}/{total_tasks}):')
+    for todo in todos:
+        if todo['completed']:
+            print(f'\t{todo["title"]}')
+
+    # Export data to CSV file
+    with open(f'{employee_id}.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(
+            ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
+        for todo in todos:
+            writer.writerow([employee_id, employee_name,
+                            todo['completed'], todo['title']])
+
+
+if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
+        print(f"Usage: {sys.argv[0]} EMPLOYEE_ID")
         sys.exit(1)
 
-    try:
-        employee_id = int(sys.argv[1])
-        user_info(employee_id)
-    except ValueError:
-        print("Employee ID must be an integer.")
-        
+    employee_id = sys.argv[1]
+    get_employee_todo_list_progress(employee_id)
