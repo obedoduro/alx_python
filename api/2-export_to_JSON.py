@@ -1,6 +1,3 @@
-"""fetching employee,TODO lists and counting completed tasks
-"""
-
 import json
 import requests
 from sys import argv
@@ -68,6 +65,9 @@ if __name__ == "__main__":
         with open('{}.json'.format(user_id), 'w') as json_file:
             json.dump({user_id: tasks}, json_file)
 
+        """
+        Print the expected output message
+        """
         print("Correct USER_ID: OK")
 
     except Exception as e:
