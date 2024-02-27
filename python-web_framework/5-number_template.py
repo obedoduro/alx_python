@@ -107,6 +107,5 @@ def number_template(n):
     else:
         return "Not a number"
 
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
