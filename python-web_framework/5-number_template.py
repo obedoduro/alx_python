@@ -1,54 +1,48 @@
 """
-This is a sample module to run on
-host 0.0.0
-port 5000
-"""
-from flask import Flask, escape, render_template
+This script creates a Flask web application with various routes.
 
-# Create a Flask web application
+Routes:
+- /: Displays "Hello HBNB!"
+- /hbnb: Displays "HBNB"
+- /c/<text>: Displays "C " followed by the value of the text variable (underscores replaced with spaces)
+- /python/<text>: Displays "Python " followed by the value of the text variable (underscores replaced with spaces)
+- /number/<n>: Displays "n is a number" only if n is an integer
+- /number_template/<n>: Displays an HTML page only if n is an integer:
+    - H1 tag: "Number: n" inside the tag BODY
+
+The option strict_slashes=False is used in route definitions to handle both /endpoint and /endpoint/ URLs.
+"""
+
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
-# Define a route for the root path with strict_slashes=False
-"""
-This module helps route in the function HBNB
 
-"""
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """
-    Route: /
+    """Route: /
     Displays "Hello HBNB!"
-
+    
     Returns:
         str: A greeting message.
     """
     return "Hello HBNB!"
 
-# Define a route for /hbnb with strict_slashes=False
-"""
-This module helps route in the function HBNB
 
-"""
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """
-    Route: /hbnb
+    """Route: /hbnb
     Displays "HBNB"
-
+    
     Returns:
         str: A message.
     """
     return "HBNB"
 
-# Define a route for /c/<text> with strict_slashes=False
-"""
-This module helps route in the function HBNB
 
-"""
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
-    """
-    Route: /c/<text>
+    """Route: /c/<text>
     Displays "C " followed by the value of the text variable.
     Replace underscore (_) symbols with a space.
 
@@ -58,18 +52,14 @@ def c_text(text):
     Returns:
         str: The formatted message.
     """
-    formatted_text = escape(text).replace('_', ' ')
+    formatted_text = text.replace('_', ' ')
     return "C " + formatted_text
 
-# Define a route for /python/<text> with strict_slashes=False
-"""
-This module helps route in the function HBNB
 
-"""
+@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
-    """
-    Route: /python/<text>
+    """Route: /python/<text>
     Displays "Python " followed by the value of the text variable.
     Replace underscore (_) symbols with a space.
 
@@ -79,18 +69,13 @@ def python_text(text):
     Returns:
         str: The formatted message.
     """
-    formatted_text = escape(text).replace('_', ' ')
+    formatted_text = text.replace('_', ' ')
     return "Python " + formatted_text
 
-# Define a route for /number/<n> with strict_slashes=False
-"""
-This module helps route in the function HBNB
 
-"""
 @app.route('/number/<int:n>', strict_slashes=False)
 def is_number(n):
-    """
-    Route: /number/<n>
+    """Route: /number/<n>
     Displays "n is a number" if n is an integer.
 
     Args:
@@ -104,28 +89,24 @@ def is_number(n):
     else:
         return "Not a number"
 
-# Define a route for /number_template/<n> with strict_slashes=False
-"""
-This module helps route in the function HBNB
 
-"""
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
-    """
-    Route: /number_template/<n>
-    Displays an HTML page with an H1 tag: "Number: n" if n is an integer.
+    """Route: /number_template/<n>
+    Displays an HTML page only if n is an integer:
+    - H1 tag: "Number: n" inside the tag BODY
 
     Args:
-        n (int): The number to include in the HTML page.
+        n (int): The number to display.
 
     Returns:
-        str: The HTML page with the H1 tag.
+        str: The HTML page.
     """
     if isinstance(n, int):
-        return render_template('number_template.html', n=n), 200
+        return render_template('5-number.html', number=n)
     else:
-        return "Not a number", 400
+        return "Not a number"
 
-# Run the application on 0.0.0.0:5000
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
